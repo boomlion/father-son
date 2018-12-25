@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #app {
+      margin: 0 auto;
+
+    }
+#ul{
+  float: left;
+}
+    ul {
+      margin-top: 50px;
+    }
+
+    li {
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: red;
+      color: white;
+      border-bottom: 1px solid white;
+    }
+
+    .input {
+      margin-left: 20px;
+      position: relative;
+      
+    }
+
+    #password {
+      margin-left: 15px;
+      margin-top: 20px;
+    }
+
+    span {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      left: 253px;
+      top: 42px;
+      text-align: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="input">
+      请输入用户名：
+      <input type="text" v-model="name">
+      <br> 请输入密码：
+      <span>点</span>
+      <input type="password" id="password" @keyup.enter="add(name,password)" v-model="password">
+    </div>
+    <login :list="list"></login>
+    <password :list="list"></password>
+  </div>
+  <script src="../lib/vue-2.4.0.js"></script>
+  <script src="../lib/axios/dist/axios.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
